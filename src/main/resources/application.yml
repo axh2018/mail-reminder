@@ -1,0 +1,35 @@
+amap:
+  key: 170b926bc81f95457138c2d036a4b50a
+
+list:
+  - receiver: 1759895304@qq.com
+    city: 360102
+  - receiver: 1656718780@qq.com
+    city: 360121
+  - receiver: 2475654225@qq.com
+    city: 360102
+  - receiver: a1759895304@gmail.com
+    city: 360102
+  - receiver: 844113648@qq.com
+    city: 360102
+
+spring:
+  mail:
+    host: smtp.aliyun.com
+    username: hwcloud@aliyun.com
+    password:
+    protocol: smtp
+    port: 465
+    default-encoding: UTF-8
+    properties:
+      mail:
+        transport:
+          protocol: smtp
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+          port: 465
+          auth: true
+          starttls:
+            enable: true
+            required: true
