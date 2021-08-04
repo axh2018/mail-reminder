@@ -10,10 +10,15 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
@@ -43,6 +48,9 @@ public class ScheduledTask
     @Autowired
     private TemplateEngine templateEngine;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     public void sendTemplateEmail(String to, String subject, Map<String,Object> templateValue) {
         System.out.println("发送html邮件：to：" + to + new Date());
         try {
@@ -70,6 +78,8 @@ public class ScheduledTask
             Map<String,Object> map = new HashMap<>();
             //倒计时
             map.put("ddl", computeDate());
+            //毒鸡汤
+            map.put("sentence", weatherService.getSentence());
             //城市
             map.put("city", JSONPath.read(weather, "$.forecasts[0].city"));
             //今天日期
