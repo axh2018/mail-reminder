@@ -1,14 +1,13 @@
+# 高德天气
 amap:
   key: 170b926bc81f95457138c2d036a4b50a
 
+# alapi新闻
+alapi:
+  key: rM5hBvzKBtzfQWpg
+
 list:
-  - receiver: 1759895304@qq.com
-    city: 360102
-  - receiver: 1656718780@qq.com
-    city: 360121
-  - receiver: 2475654225@qq.com
-    city: 360102
-  - receiver: 844113648@qq.com
+  - receiver: 201826702013@jxnu.edu.cn
     city: 360102
 
 spring:

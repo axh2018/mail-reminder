@@ -37,17 +37,16 @@
 
    `docker build -t mail-reminder .`
 
-6. 运行
-
+6. `docker-compose`的一些指令
 
    `docker-compose up -d`
-   停止
-   
+    后台运行
+
    `docker-compose down`
-   查看日志
+    停止
    
    `docker logs mail-reminder `
-
+    查看日志
 #### 使用说明
 
 1.  `docker build`出来的镜像330M左右

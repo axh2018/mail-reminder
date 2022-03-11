@@ -11,8 +11,6 @@ public class Weather
 {
     private String date;
 
-    private String image;
-
     private String weather;
 
     private String temp;
